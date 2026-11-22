@@ -1,397 +1,335 @@
 <!DOCTYPE html>
-<html lang="si" class="scroll-smooth">
+<html lang="si">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="googlee1fc35545edd459a" />
     <meta name="google-site-verification" content="googlee1fc35545edd459a.html" />
-    <title>Slashboard v4.2.1 - Home, User Guide & Feature Documentation</title>
-    <meta name="description" content="Complete user guide and documentation for Slashboard v4.2.1 Sinhala Keyboard — Low-RAM 2GB/3GB Turbo Engine, WhatsApp + iOS/Facebook/Twitter Emoji Hub, Android TV D-Pad Support, Mini-POS & Invoice Studio, and Singlish/Wijesekara typing." />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Slashboard Guide v4.2.4 — Android & Windows භාවිතා කරන හැටි</title>
+    <meta name="description" content="Slashboard Android සහ Windows PC සිංහල ටයිපින් භාවිතා කරන හැටි, Singlish උදාහරණ, Smart Wallet, Mini-POS සහ Android TV උපදෙස්.">
+    <meta name="theme-color" content="#050811">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Noto+Sans+Sinhala:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg-primary: #060913;
-            --accent-cyan: #06b6d4;
-            --accent-indigo: #6366f1;
-            --accent-emerald: #10b981;
+            --bg: #050811;
+            --surface: rgba(15, 23, 42, 0.74);
+            --border: rgba(148, 163, 184, 0.14);
+            --border-bright: rgba(56, 189, 248, 0.4);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --cyan: #38bdf8;
+            --emerald: #34d399;
+            --radius-xl: 24px;
+            --radius-lg: 18px;
+            --radius-md: 12px;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Plus Jakarta Sans', 'Noto Sans Sinhala', sans-serif;
-            background-color: var(--bg-primary);
-            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Sinhala', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
             overflow-x: hidden;
+            background-image:
+                radial-gradient(520px circle at 15% 10%, rgba(56, 189, 248, 0.13), transparent 60%),
+                radial-gradient(500px circle at 85% 25%, rgba(52, 211, 153, 0.1), transparent 60%);
         }
-        .font-mono-tech {
+
+        .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        header {
+            position: sticky; top: 0; z-index: 80;
+            background: rgba(5, 8, 17, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-bar { height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+        .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-weight: 800; font-size: 1.15rem; }
+        .brand-mark {
+            width: 38px; height: 38px; border-radius: 11px;
+            background: linear-gradient(135deg, #0284c7, #10b981);
+            display: grid; place-items: center; color: #fff; font-weight: 800;
+        }
+
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.2s; }
+        .nav-links a:hover { color: #fff; }
+
+        .lang-switch {
+            display: inline-flex; padding: 3px; border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border);
+        }
+        .lang-btn {
+            border: none; background: transparent; color: var(--text-muted);
+            font-family: inherit; font-size: 0.78rem; font-weight: 700;
+            padding: 5px 10px; border-radius: 999px; cursor: pointer;
+        }
+        .lang-btn.active { background: linear-gradient(135deg, #0284c7, #10b981); color: #fff; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 11px 18px; border-radius: var(--radius-md); font-weight: 700;
+            font-size: 0.9rem; text-decoration: none; border: 1px solid transparent; cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease; font-family: inherit;
+        }
+        .btn-primary { background: linear-gradient(135deg, #0ea5e9, #10b981); color: #fff; }
+        .btn-windows { background: rgba(14, 165, 233, 0.14); color: #e0f2fe; border-color: rgba(56, 189, 248, 0.45); }
+        .btn-ghost { background: var(--surface); color: #e2e8f0; border-color: var(--border); }
+        .btn:hover { transform: translateY(-2px); }
+
+        .hero { padding: 52px 0 32px; text-align: center; }
+        .hero h1 { font-size: clamp(1.85rem, 4vw, 2.9rem); line-height: 1.2; margin-bottom: 12px; }
+        .grad-text {
+            background: linear-gradient(125deg, #38bdf8, #34d399);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero p { color: #cbd5e1; max-width: 660px; margin: 0 auto 22px; }
+
+        .quick-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+        section { padding: 44px 0; }
+        .sec-title { font-size: clamp(1.4rem, 2.8vw, 1.95rem); margin-bottom: 8px; }
+        .sec-sub { color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem; }
+
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 22px;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        .card:hover { transform: translateY(-3px); border-color: var(--border-bright); }
+
+        .step-num {
+            width: 34px; height: 34px; border-radius: 10px;
+            background: rgba(56, 189, 248, 0.16); color: var(--cyan);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            display: grid; place-items: center; font-weight: 800; margin-bottom: 12px;
+        }
+
+        .card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+        .card p { font-size: 0.9rem; color: var(--text-muted); }
+
+        .cheat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .cheat-item {
+            background: rgba(15, 23, 42, 0.85); border: 1px solid var(--border);
+            border-radius: 14px; padding: 14px; display: flex;
+            justify-content: space-between; align-items: center; gap: 8px;
+        }
+        .kbd {
             font-family: 'JetBrains Mono', monospace;
+            background: #0b1120; border: 1px solid rgba(148, 163, 184, 0.25);
+            border-bottom-width: 3px; border-radius: 8px; padding: 3px 9px;
+            font-size: 0.84rem; color: var(--cyan); font-weight: 700;
         }
-        .tech-grid-bg {
-            background-size: 42px 42px;
-            background-image: 
-                linear-gradient(to right, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(6, 182, 212, 0.06) 1px, transparent 1px);
-        }
-        .glass-card {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(148, 163, 184, 0.12);
-            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .glass-card:hover {
-            border-color: rgba(6, 182, 212, 0.4);
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.14);
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #34d399 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .kbd-chip {
-            font-family: 'JetBrains Mono', monospace;
-            background: rgba(30, 41, 59, 0.9);
-            border: 1px solid rgba(148, 163, 184, 0.25);
-            border-bottom-width: 3px;
-            border-radius: 0.5rem;
-            padding: 0.2rem 0.6rem;
-            font-size: 0.8rem;
-            color: #38bdf8;
-        }
-        .tab-active {
-            background: linear-gradient(135deg, rgba(6, 182, 212, 0.22), rgba(99, 102, 241, 0.22));
-            border-color: rgba(6, 182, 212, 0.6);
-            color: #fff;
+        .si-val { font-size: 1.05rem; font-weight: 700; color: var(--emerald); }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+        footer { border-top: 1px solid var(--border); padding: 30px 0; margin-top: 32px; color: var(--text-muted); font-size: 0.86rem; }
+        .footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+        .footer-row a { color: var(--text-muted); text-decoration: none; margin-left: 14px; }
+        .footer-row a:hover { color: var(--cyan); }
+
+        @media (max-width: 900px) {
+            .steps-grid, .two-col { grid-template-columns: 1fr; }
+            .cheat-grid { grid-template-columns: repeat(2, 1fr); }
+            .nav-links { display: none; }
         }
     </style>
 </head>
-<body class="antialiased selection:bg-cyan-500 selection:text-slate-950 tech-grid-bg pb-20 md:pb-0">
-
-    <!-- Top Release Announcement Banner -->
-    <div class="bg-gradient-to-r from-cyan-950/90 via-indigo-950/90 to-slate-950 border-b border-cyan-500/20 text-xs sm:text-sm py-2.5 px-4 text-center relative z-50">
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2">
-            <span class="px-2 py-0.5 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 font-mono-tech font-semibold text-[11px]">DOCS v4.2.1</span>
-            <span class="text-slate-200 font-medium">Complete User Guide: 2GB/3GB Low-RAM Engine, Emoji Pack Hub, Mini-POS & Android TV D-Pad Support</span>
-            <a href="index.html" class="text-cyan-400 hover:text-cyan-300 underline font-semibold ml-1">Launch Interactive Playground →</a>
-        </div>
-    </div>
-
-    <!-- Sticky Navigation -->
-    <nav class="sticky top-0 w-full z-40 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <a href="index.html" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition">
-                        සි
-                    </div>
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="font-extrabold text-lg tracking-tight text-white">Slashboard</span>
-                            <span class="text-[10px] font-mono-tech uppercase px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-semibold">v4.2.1</span>
-                        </div>
-                        <span class="block text-[11px] text-slate-400">User Manual & Setup Hub</span>
-                    </div>
-                </a>
-                <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
-                    <a href="index.html" class="hover:text-cyan-400 transition">Overview</a>
-                    <a href="#setup" class="hover:text-cyan-400 transition">Quick Setup</a>
-                    <a href="#new-in-421" class="hover:text-cyan-400 transition">v4.2.1 Guides</a>
-                    <a href="#typing-guide" class="hover:text-cyan-400 transition">Singlish & Wijesekara</a>
-                    <a href="privacy.html" class="hover:text-cyan-400 transition">Privacy Policy</a>
-                    <a href="terms.html" class="hover:text-cyan-400 transition">Terms</a>
+<body>
+    <header>
+        <div class="container nav-bar">
+            <a href="index.html" class="brand">
+                <div class="brand-mark">සි</div>
+                <span>Slashboard</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" data-si="මුල් පිටුව" data-en="Home">මුල් පිටුව</a>
+                <a href="#android-setup" data-si="Android Setup" data-en="Android Setup">Android Setup</a>
+                <a href="#windows-guide" data-si="Windows PC" data-en="Windows PC">Windows PC</a>
+                <a href="#singlish-chart" data-si="Singlish උදාහරණ" data-en="Singlish Guide">Singlish උදාහරණ</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+            <div style="display:flex; align-items:center; gap:10px;">
+                <div class="lang-switch">
+                    <button type="button" class="lang-btn active" data-lang-set="si">සිංහල</button>
+                    <button type="button" class="lang-btn" data-lang-set="en">EN</button>
                 </div>
-                <div class="flex items-center gap-2.5">
-                    <a href="https://play.google.com/store/apps/details?id=com.slashbord" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition shadow-lg shadow-cyan-500/20 flex items-center gap-1.5">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-                        <span>Play Store</span>
-                    </a>
-                </div>
+                <a href="index.html#download" class="btn btn-primary" style="padding:8px 14px; font-size:0.82rem;" data-si="Download" data-en="Download">Download</a>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Header -->
-    <section class="relative pt-14 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[650px] h-[300px] bg-gradient-to-tr from-cyan-500/15 via-indigo-500/15 to-emerald-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-cyan-300 text-xs font-medium mb-6">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Slashboard v4.2.1 Official User Guide & Documentation</span>
-            </div>
-            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-5 leading-tight">
-                Master <span class="gradient-text">Slashboard v4.2.1</span> on Every Android Device
+    <main class="container">
+        <div class="hero">
+            <span class="mono" style="color: var(--cyan); font-size: 0.8rem; font-weight: 700;">USER GUIDE • v4.2.4</span>
+            <h1>
+                <span data-si="Slashboard භාවිතා කරන" data-en="How to Use">Slashboard භාවිතා කරන</span>
+                <span class="grad-text" data-si="සරලම මාර්ගෝපදේශය" data-en="Slashboard Easily">සරලම මාර්ගෝපදේශය</span>
             </h1>
-            <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
-                සිංහල Singlish, විජේසේකර, Voice Typing, Mini-POS බිල්පත්, WhatsApp/iOS/Facebook Emoji Packs, සහ Android TV Remote Control භාවිතය පිළිබඳ සම්පූර්ණ මාර්ගෝපදේශය.
+            <p data-si="Android Phone එකේ සිට Windows පරිගණකය දක්වා, විනාඩියෙන් සිංහල ටයිපින් පටන් ගන්නා හැටි සරලව මෙතනින් ඉගෙන ගන්න."
+               data-en="Start typing Sinhala in under a minute on Android Phones, Android TV, and Windows PCs.">
+                Android Phone එකේ සිට Windows පරිගණකය දක්වා, විනාඩියෙන් සිංහල ටයිපින් පටන් ගන්නා හැටි සරලව මෙතනින් ඉගෙන ගන්න.
             </p>
-            <div class="flex flex-wrap justify-center gap-3">
-                <a href="#setup" class="px-5 py-2.5 rounded-xl bg-cyan-500/15 border border-cyan-500/40 text-cyan-300 text-sm font-semibold hover:bg-cyan-500/25 transition">1. 3-Step Setup</a>
-                <a href="#new-in-421" class="px-5 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-sm font-semibold hover:border-cyan-500/40 transition">2. v4.2.1 Smart Tools</a>
-                <a href="#tv-guide" class="px-5 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-sm font-semibold hover:border-cyan-500/40 transition">3. Android TV Guide</a>
-                <a href="#typing-guide" class="px-5 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-sm font-semibold hover:border-cyan-500/40 transition">4. Singlish Cheat Sheet</a>
+            <div class="quick-nav">
+                <a href="#android-setup" class="btn btn-ghost" data-si="1. Android Setup" data-en="1. Android Setup">1. Android Setup</a>
+                <a href="#windows-guide" class="btn btn-windows" data-si="2. Windows PC (අලුත්)" data-en="2. Windows PC (New)">2. Windows PC (අලුත්)</a>
+                <a href="#singlish-chart" class="btn btn-ghost" data-si="3. Singlish උදාහරණ" data-en="3. Singlish Examples">3. Singlish උදාහරණ</a>
+                <a href="#smart-tools" class="btn btn-ghost" data-si="4. Smart Wallet &amp; POS" data-en="4. Smart Wallet &amp; POS">4. Smart Wallet &amp; POS</a>
             </div>
         </div>
-    </section>
 
-    <!-- 3-Step Quick Setup -->
-    <section id="setup" class="py-14 bg-slate-900/40 border-y border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-xs font-mono-tech uppercase tracking-widest text-cyan-400">QUICK ONBOARDING</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1 mb-3">තත්පර 30න් Slashboard සක්‍රිය කරගන්නා ආකාරය</h2>
-                <p class="text-slate-400 text-sm sm:text-base">Activate Slashboard in three simple steps — zero personal data collection.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass-card p-6 rounded-2xl relative overflow-hidden">
-                    <div class="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-300 font-mono-tech font-bold text-lg mb-4">01</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Enable in System Settings</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Slashboard App එක විවෘත කර <strong>"Enable Slashboard"</strong> බොත්තම ඔබා Android On-Screen Keyboard ලැයිස්තුවෙන් Slashboard ක්‍රියාත්මක කරන්න.
+        <!-- 1. Android 3-Step Setup -->
+        <section id="android-setup">
+            <h2 class="sec-title" data-si="1. Android Phone එකේ කීබෝඩ් එක සක්‍රීය කරන හැටි" data-en="1. Enable Slashboard on Android (3 Easy Steps)">1. Android Phone එකේ කීබෝඩ් එක සක්‍රීය කරන හැටි</h2>
+            <p class="sec-sub" data-si="පියවර 3යි — තත්පර 30න් ඉවරයි." data-en="Just 3 quick steps and you are ready to type.">පියවර 3යි — තත්පර 30න් ඉවරයි.</p>
+
+            <div class="steps-grid">
+                <div class="card">
+                    <div class="step-num">1</div>
+                    <h3 data-si="ඇප් එක විවෘත කර Enable කරන්න" data-en="Open App &amp; Enable Keyboard">ඇප් එක විවෘත කර Enable කරන්න</h3>
+                    <p data-si="Slashboard ඇප් එක open කරලා 'Enable Keyboard' බොත්තම ඔබන්න. Settings වලින් Slashboard switch එක ON කරන්න."
+                       data-en="Open Slashboard, tap 'Enable Keyboard', and switch on Slashboard in Android language settings.">
+                        Slashboard ඇප් එක open කරලා 'Enable Keyboard' බොත්තම ඔබන්න. Settings වලින් Slashboard switch එක ON කරන්න.
                     </p>
-                    <span class="text-[11px] font-mono-tech text-cyan-400">Settings → System → Languages & Input</span>
                 </div>
-                <div class="glass-card p-6 rounded-2xl relative overflow-hidden">
-                    <div class="w-11 h-11 rounded-xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-300 font-mono-tech font-bold text-lg mb-4">02</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Switch Input Method</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        <strong>"Select Input Method"</strong> බොත්තම ඔබා ඔබගේ ප්‍රධාන යතුරුපුවරුව ලෙස <strong>Slashboard</strong> තෝරන්න.
+                <div class="card">
+                    <div class="step-num">2</div>
+                    <h3 data-si="ප්‍රධාන කීබෝඩ් එක ලෙස තෝරන්න" data-en="Select as Default Keyboard">ප්‍රධාන කීබෝඩ් එක ලෙස තෝරන්න</h3>
+                    <p data-si="'Select Keyboard' බොත්තම ඔබලා Slashboard තෝරන්න. දැන් WhatsApp, Facebook, SMS හැමතැනම සිංහල ටයිප් කරන්න පුළුවන්."
+                       data-en="Tap 'Select Keyboard' and pick Slashboard. Now you can type Sinhala in WhatsApp, Facebook, and every app.">
+                        'Select Keyboard' බොත්තම ඔබලා Slashboard තෝරන්න. දැන් WhatsApp, Facebook, SMS හැමතැනම සිංහල ටයිප් කරන්න පුළුවන්.
                     </p>
-                    <span class="text-[11px] font-mono-tech text-indigo-400">Default Keyboard: Slashboard IME</span>
                 </div>
-                <div class="glass-card p-6 rounded-2xl relative overflow-hidden">
-                    <div class="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-300 font-mono-tech font-bold text-lg mb-4">03</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Choose Mode & Emoji Pack</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        ටූල්බාර් එකෙන් <strong>Singlish / Wijesekara / English</strong> තෝරන්න. WhatsApp Emoji පෙර-ස්ථාපිතව ඇති අතර අවශ්‍ය නම් iOS/FB Emoji බාගත කරගන්න.
+                <div class="card">
+                    <div class="step-num">3</div>
+                    <h3 data-si="භාෂාව සහ Theme එක තෝරන්න" data-en="Switch Language &amp; Theme">භාෂාව සහ Theme එක තෝරන්න</h3>
+                    <p data-si="කීබෝඩ් එකේ 'සිං / EN' බොත්තමෙන් ඕනෑම වෙලාවක සිංහල සහ ඉංග්‍රීසි මාරු කරන්න. Themes ටැබ් එකෙන් කැමති රූපයක් දාගන්න."
+                       data-en="Tap the 'සිං / EN' key anytime to switch languages, and customize backgrounds in the Themes tab.">
+                        කීබෝඩ් එකේ 'සිං / EN' බොත්තමෙන් ඕනෑම වෙලාවක සිංහල සහ ඉංග්‍රීසි මාරු කරන්න. Themes ටැබ් එකෙන් කැමති රූපයක් දාගන්න.
                     </p>
-                    <span class="text-[11px] font-mono-tech text-emerald-400">Ready for Phone, Tablet & Android TV</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- What's New in v4.2.1 Detailed Feature Guides -->
-    <section id="new-in-421" class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-xs font-mono-tech uppercase tracking-widest text-emerald-400">VERSION 4.2.1 ARCHITECTURE</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1 mb-3">Latest v4.2.1 Features & How They Work</h2>
-                <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">Engineered for maximum responsiveness on 2GB/3GB RAM devices while packing powerful productivity tools inside your keyboard.</p>
-            </div>
+        <!-- 2. NEW Windows PC Guide -->
+        <section id="windows-guide">
+            <h2 class="sec-title" data-si="2. Windows PC වල සිංහල ටයිප් කරන හැටි (අලුත්!)" data-en="2. How to Use Slashboard on Windows PC (New!)">2. Windows PC වල සිංහල ටයිප් කරන හැටි (අලුත්!)</h2>
+            <p class="sec-sub" data-si="දැන් Windows 10 සහ 11 පරිගණක වලත් Word, Chrome, WhatsApp Web වල කෙලින්ම සිංහල ටයිප් කරන්න පුළුවන්."
+               data-en="Type Sinhala directly in Word, Chrome, WhatsApp Web, and any Windows 10/11 software.">
+                දැන් Windows 10 සහ 11 පරිගණක වලත් Word, Chrome, WhatsApp Web වල කෙලින්ම සිංහල ටයිප් කරන්න පුළුවන්.
+            </p>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Low RAM Memory Engine -->
-                <div class="glass-card p-7 rounded-2xl border-l-4 border-l-emerald-500">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-300 font-mono-tech text-xs font-semibold">2GB / 3GB RAM OPTIMIZED</span>
-                        <span class="text-xs font-mono-tech text-slate-400">Zero-Lag Engine</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">⚡ Custom Low-RAM Memory Management</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        MIUI, OneUI සහ 2GB/3GB RAM දුරකථනවල zRAM swapping සහ GC stutter වැළැක්වීම සඳහා Slashboard v4.2.1 හි විශේෂ Memory Management පද්ධතියක් අඩංගු වේ:
+            <div class="two-col">
+                <div class="card">
+                    <h3 data-si="💻 සරල ස්ථාපනය (Install &amp; Type)" data-en="💻 Simple Setup (Install &amp; Type)">💻 සරල ස්ථාපනය (Install &amp; Type)</h3>
+                    <p style="margin-bottom: 14px;"
+                       data-si="1. Windows Installer එක Download කරලා Run කරන්න. 2. Taskbar එකෙන් Slashboard සක්‍රීය කරන්න. 3. සාමාන්‍ය ඉංග්‍රීසි Keyboard එකෙන් Singlish ටයිප් කරද්දී කෙලින්ම සිංහල Unicode ටයිප් වෙනවා."
+                       data-en="1. Download and run the Windows installer. 2. Enable Slashboard from the system tray. 3. Type in Singlish on your regular PC keyboard for instant Sinhala Unicode everywhere.">
+                        1. Windows Installer එක Download කරලා Run කරන්න. 2. Taskbar එකෙන් Slashboard සක්‍රීය කරන්න. 3. සාමාන්‍ය ඉංග්‍රීසි Keyboard එකෙන් Singlish ටයිප් කරද්දී කෙලින්ම සිංහල Unicode ටයිප් වෙනවා.
                     </p>
-                    <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
-                        <li class="flex items-start gap-2"><span class="text-emerald-400 font-bold">✓</span><span><strong>Explicit Bitmap Recycling:</strong> යතුරුපුවරුව වැසෙන සෑම විටම (<code class="text-cyan-300">onFinishInputView</code>) සහ <code class="text-cyan-300">onTrimMemory</code> අවස්ථාවලදී භාවිත නොවන Emoji sprite-sheets හා bitmaps ස්වයංක්‍රීයව නිදහස් කරයි.</span></li>
-                        <li class="flex items-start gap-2"><span class="text-emerald-400 font-bold">✓</span><span><strong>WeakReference Background Tasks:</strong> Dictionary පූරණය සහ User Learning tasks සියල්ල <code class="text-cyan-300">WeakReference</code> හරහා ක්‍රියාත්මක වන නිසා memory leaks ඇති නොවේ.</span></li>
-                        <li class="flex items-start gap-2"><span class="text-emerald-400 font-bold">✓</span><span><strong>Pre-Calculated Layout Measurements:</strong> Settings UI හි Viewport-aware tab caching මගින් 60fps සුමට scrolling ලබා දෙයි.</span></li>
-                    </ul>
+                    <a href="index.html#windows" class="btn btn-windows" data-si="Windows Download පිටුවට යන්න →" data-en="Go to Windows Download →">Windows Download පිටුවට යන්න →</a>
                 </div>
-
-                <!-- Emoji Style Hub -->
-                <div class="glass-card p-7 rounded-2xl border-l-4 border-l-cyan-500">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-md bg-cyan-500/15 text-cyan-300 font-mono-tech text-xs font-semibold">EMOJI PACK HUB</span>
-                        <span class="text-xs font-mono-tech text-slate-400">Pre-installed + Cloud</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">🎨 WhatsApp Pre-Installed + Downloadable Emoji Packs</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        ඇප් එකේ ප්‍රමාණය අඩු කර වේගය වැඩි කිරීම සඳහා <strong>WhatsApp Emoji Style</strong> පෙර-ස්ථාපිතව (100% Offline) ලබා දී ඇත. ඔබට කැමති වෙනත් Emoji විලාසයක් Settings තුළින් එක් ක්ලික් කිරීමකින් බාගත කළ හැක:
+                <div class="card">
+                    <h3 data-si="📺 Android TV සහ Media Box උපදෙස්" data-en="📺 Android TV &amp; Media Box Tips">📺 Android TV සහ Media Box උපදෙස්</h3>
+                    <p data-si="Smart TV එකේ Remote එකේ Arrow keys (D-Pad) වලින් පහසුවෙන් අකුරු තෝරන්න පුළුවන්. YouTube හෝ Browser එකේ සිංහලෙන් search කරන්න හරිම ලේසියි."
+                       data-en="Navigate keys effortlessly with your TV remote D-Pad to search YouTube and browse in Sinhala or English.">
+                        Smart TV එකේ Remote එකේ Arrow keys (D-Pad) වලින් පහසුවෙන් අකුරු තෝරන්න පුළුවන්. YouTube හෝ Browser එකේ සිංහලෙන් search කරන්න හරිම ලේසියි.
                     </p>
-                    <div class="grid grid-cols-2 gap-2.5 text-xs">
-                        <div class="p-2.5 rounded-xl bg-slate-900/90 border border-emerald-500/30 text-emerald-300 font-medium">✅ WhatsApp Style (Built-in)</div>
-                        <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-300">🍎 iOS / Apple Emoji (Download)</div>
-                        <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-300">💙 Facebook Emoji (Download)</div>
-                        <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-300">🐦 Twitter / X & Google Noto</div>
-                    </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Mini-POS & Invoice Studio -->
-                <div class="glass-card p-7 rounded-2xl border-l-4 border-l-indigo-500">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-md bg-indigo-500/15 text-indigo-300 font-mono-tech text-xs font-semibold">BUSINESS TOOLKIT</span>
-                        <span class="text-xs font-mono-tech text-slate-400">100% On-Device SQLite</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">🧾 In-Keyboard Mini-POS & Invoice Studio</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        WhatsApp හෝ Messenger හි පාරිභෝගිකයින් සමඟ කතා කරන අතරතුරම යතුරුපුවරුව තුළ සිටම බිල්පත් (Invoices & Thermal Receipts) සාදා යවන්න:
+        <!-- 3. Simple Singlish Examples -->
+        <section id="singlish-chart">
+            <h2 class="sec-title" data-si="3. සරල Singlish උදාහරණ" data-en="3. Everyday Singlish Cheat Sheet">3. සරල Singlish උදාහරණ</h2>
+            <p class="sec-sub" data-si="මේ වගේ සාමාන්‍යයෙන් ටයිප් කරන විදියටම ලියන්න — Android සහ Windows දෙකේම එකම විදියයි!"
+               data-en="Works identically on both Android and Windows PC.">
+                මේ වගේ සාමාන්‍යයෙන් ටයිප් කරන විදියටම ලියන්න — Android සහ Windows දෙකේම එකම විදියයි!
+            </p>
+
+            <div class="cheat-grid">
+                <div class="cheat-item"><span class="kbd">kohomadha</span><span class="si-val">කොහොමද</span></div>
+                <div class="cheat-item"><span class="kbd">oyata</span><span class="si-val">ඔයට</span></div>
+                <div class="cheat-item"><span class="kbd">adharei</span><span class="si-val">ආදරෙයි</span></div>
+                <div class="cheat-item"><span class="kbd">gedhara</span><span class="si-val">ගෙදර</span></div>
+                <div class="cheat-item"><span class="kbd">krama</span><span class="si-val">ක්‍රම</span></div>
+                <div class="cheat-item"><span class="kbd">vidhyaa</span><span class="si-val">විද්‍යා</span></div>
+                <div class="cheat-item"><span class="kbd">nng</span><span class="si-val">ඟ්</span></div>
+                <div class="cheat-item"><span class="kbd">nndh</span><span class="si-val">ඳ්</span></div>
+                <div class="cheat-item"><span class="kbd">amx</span><span class="si-val">අං</span></div>
+                <div class="cheat-item"><span class="kbd">shri</span><span class="si-val">ශ්‍රි</span></div>
+                <div class="cheat-item"><span class="kbd">thx</span><span class="si-val">ස්තූතියි</span></div>
+                <div class="cheat-item"><span class="kbd">mcn</span><span class="si-val">මචන්</span></div>
+            </div>
+        </section>
+
+        <!-- 4. Smart Wallet & Mini-POS -->
+        <section id="smart-tools">
+            <h2 class="sec-title" data-si="4. මුදල් පොත (Smart Wallet) සහ Mini-POS" data-en="4. Smart Wallet &amp; Mini-POS Tools">4. මුදල් පොත (Smart Wallet) සහ Mini-POS</h2>
+            <p class="sec-sub" data-si="ව්‍යාපාරිකයන්ටත්, දෛනික වියදම් බලන හැමෝටමත් ප්‍රයෝජනවත් පහසුකම්."
+               data-en="Helpful everyday tools built right inside Slashboard.">
+                ව්‍යාපාරිකයන්ටත්, දෛනික වියදම් බලන හැමෝටමත් ප්‍රයෝජනවත් පහසුකම්.
+            </p>
+
+            <div class="two-col">
+                <div class="card">
+                    <h3 data-si="💼 මුදල් පොත (Smart Wallet)" data-en="💼 Smart Wallet (Money Book)">💼 මුදල් පොත (Smart Wallet)</h3>
+                    <p data-si="කීබෝඩ් එකෙන්ම '-450 Petrol' හෝ '+2500 Order' වගේ කෙටියෙන් ටයිප් කරලා එවෙලෙම වියදම්/ආදායම් සටහන් කරන්න. ටයිප් කරද්දී Back වුණත් ඔබ ලියපු ටික මැකෙන්නේ නෑ."
+                       data-en="Log expenses or income in seconds like '-450 Petrol' or '+2500 Order' with Cash/Bank/Card tracking and automatic draft saving.">
+                        කීබෝඩ් එකෙන්ම '-450 Petrol' හෝ '+2500 Order' වගේ කෙටියෙන් ටයිප් කරලා එවෙලෙම වියදම්/ආදායම් සටහන් කරන්න. ටයිප් කරද්දී Back වුණත් ඔබ ලියපු ටික මැකෙන්නේ නෑ.
                     </p>
-                    <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
-                        <li class="flex items-start gap-2"><span class="text-indigo-400 font-bold">1.</span><span><strong>Smart Clipboard Customer Parser:</strong> පාරිභෝගිකයා එවූ නම, දුරකථන අංකය සහ ලිපිනය කොපි කළ සැණින් ස්වයංක්‍රීයව හඳුනාගනී.</span></li>
-                        <li class="flex items-start gap-2"><span class="text-indigo-400 font-bold">2.</span><span><strong>Quick Catalog Chips:</strong> ඔබ නිතර විකුණන භාණ්ඩ සහ මිල ගණන් එක් ටැප් එකකින් බිල්පතට එක් කරන්න.</span></li>
-                        <li class="flex items-start gap-2"><span class="text-indigo-400 font-bold">3.</span><span><strong>Instant Share:</strong> Thermal Receipt Image, Modern PNG හෝ PDF ලෙස කෙලින්ම Chat එකට Share කරන්න.</span></li>
-                    </ul>
                 </div>
-
-                <!-- Smart Built-in Utilities -->
-                <div class="glass-card p-7 rounded-2xl border-l-4 border-l-amber-500">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-300 font-mono-tech text-xs font-semibold">SMART UTILITIES</span>
-                        <span class="text-xs font-mono-tech text-slate-400">Real-Time Triggers</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">🪪 NIC Analyzer, Live Math, Fonts & FM Converter</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        ටයිප් කරන අතරතුර ස්වයංක්‍රීයව ක්‍රියාත්මක වන බුද්ධිමත් මෙවලම් රැසක්:
+                <div class="card">
+                    <h3 data-si="🧾 Mini-POS සහ WhatsApp බිල්පත්" data-en="🧾 Mini-POS &amp; WhatsApp Invoices">🧾 Mini-POS සහ WhatsApp බිල්පත්</h3>
+                    <p data-si="Online ව්‍යාපාර කරන අයට පාරිභෝගිකයාගේ නම, භාණ්ඩ සහ මිල දාලා තත්පර කීපයෙන් PDF හෝ Image බිල්පතක් හදලා කෙලින්ම WhatsApp කරන්න පුළුවන්."
+                       data-en="Build itemized customer bills and share crisp PDF or PNG receipts directly into WhatsApp chats in seconds.">
+                        Online ව්‍යාපාර කරන අයට පාරිභෝගිකයාගේ නම, භාණ්ඩ සහ මිල දාලා තත්පර කීපයෙන් PDF හෝ Image බිල්පතක් හදලා කෙලින්ම WhatsApp කරන්න පුළුවන්.
                     </p>
-                    <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
-                        <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">•</span><span><strong>Sri Lankan NIC Analyzer:</strong> පැරණි (9-digit V/X) හෝ නව (12-digit) ජාතික හැඳුනුම්පත් අංකයක් ටයිප් කළ විට උපන්දිනය සහ ස්ත්‍රී/පුරුෂ භාවය පෙන්වයි.</span></li>
-                        <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">•</span><span><strong>Live Math & Sinhala Numbers:</strong> <code class="text-cyan-300">250*14=</code> ලෙස ටයිප් කළ විට පිළිතුරත්, ඉලක්කම් සිංහල වචනයෙන් ලිවීමේ පහසුකමත් ලබා දෙයි.</span></li>
-                        <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">•</span><span><strong>Top 50 Font Studio & FM Abhaya:</strong> ලොව ජනප්‍රියතම ෆොන්ට් 50ක් සහ Unicode ⇄ FM Abhaya ක්ෂණික පරිවර්තකය.</span></li>
-                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Android TV, Tablet & Multi-Device Guide -->
-    <section id="tv-guide" class="py-14 bg-slate-900/40 border-y border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-7">
-                    <span class="text-xs font-mono-tech uppercase tracking-widest text-cyan-400">UNIVERSAL FORM-FACTOR ENGINE</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-4">📺 Android TV, Media Box, Tablet & Foldable Support</h2>
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                        Slashboard v4.2.1 දැන් ජංගම දුරකථනවලට අමතරව Android TV, Google TV, Mi Box, Android Players සහ විශාල Tablet තිර සඳහා පූර්ණ සහය දක්වයි.
-                    </p>
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
-                            <div class="text-cyan-400 font-bold text-sm mb-1">🎮 TV Remote D-Pad Navigation</div>
-                            <p class="text-slate-400 text-xs leading-relaxed">
-                                Remote එකේ <strong>Up / Down / Left / Right</strong> ඊතල මගින් යතුරු අතර ගමන් කර <strong>OK / Center</strong> බොත්තමෙන් අකුරු ටයිප් කරන්න. තෝරාගත් යතුර වටා දීප්තිමත් Cyan Focus Ring එකක් දිස්වේ.
-                            </p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
-                            <div class="text-indigo-400 font-bold text-sm mb-1">🖥️ Non-Fullscreen Landscape</div>
-                            <p class="text-slate-400 text-xs leading-relaxed">
-                                TV සහ Landscape මාදිලියේදී මුළු තිරයම ආවරණය නොවන නිසා YouTube, Browsers සහ OTT Apps තුළ සිංහලෙන් පහසුවෙන් Search කළ හැක.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:col-span-5">
-                    <div class="glass-card p-6 rounded-2xl border border-cyan-500/30">
-                        <div class="text-xs font-mono-tech text-cyan-400 mb-3 uppercase">TV Remote Key Mapping</div>
-                        <div class="space-y-3 text-xs sm:text-sm">
-                            <div class="flex items-center justify-between py-2 border-b border-slate-800">
-                                <span class="text-slate-300">Navigate Keys</span>
-                                <span class="kbd-chip">▲ ▼ ◄ ► Arrows</span>
-                            </div>
-                            <div class="flex items-center justify-between py-2 border-b border-slate-800">
-                                <span class="text-slate-300">Type Focused Key</span>
-                                <span class="kbd-chip">OK / DPAD_CENTER</span>
-                            </div>
-                            <div class="flex items-center justify-between py-2 border-b border-slate-800">
-                                <span class="text-slate-300">Hide Keyboard</span>
-                                <span class="kbd-chip">BACK Button</span>
-                            </div>
-                            <div class="flex items-center justify-between py-2">
-                                <span class="text-slate-300">Physical USB/BT Keyboard</span>
-                                <span class="kbd-chip">Direct Singlish Support</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Singlish & Wijesekara Reference Table -->
-    <section id="typing-guide" class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-xs font-mono-tech uppercase tracking-widest text-cyan-400">TRANSLITERATION REFERENCE</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1 mb-3">සිංග්ලිෂ් (Singlish) ටයිප් කිරීමේ කෙටි සටහන</h2>
-                <p class="text-slate-400 text-sm sm:text-base">Type phonetic English letters to produce accurate Sinhala script automatically.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Vowels -->
-                <div class="glass-card p-6 rounded-2xl">
-                    <h3 class="text-base font-bold text-cyan-400 mb-4 font-mono-tech uppercase">1. ස්වර (Vowels)</h3>
-                    <div class="grid grid-cols-2 gap-2 text-sm">
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>a → <strong>අ</strong></span><span class="text-slate-400">aa → <strong>ආ</strong></span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>ae → <strong>ඇ</strong></span><span class="text-slate-400">aae → <strong>ඈ</strong></span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>i → <strong>ඉ</strong></span><span class="text-slate-400">ii / ee → <strong>ඊ</strong></span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>u → <strong>උ</strong></span><span class="text-slate-400">uu / oo → <strong>ඌ</strong></span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>e → <strong>එ</strong></span><span class="text-slate-400">ea → <strong>ඒ</strong></span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>o → <strong>ඔ</strong></span><span class="text-slate-400">oe → <strong>ඕ</strong></span></div>
-                    </div>
-                </div>
-
-                <!-- Consonants -->
-                <div class="glass-card p-6 rounded-2xl">
-                    <h3 class="text-base font-bold text-indigo-400 mb-4 font-mono-tech uppercase">2. ව්‍යංජන (Consonants)</h3>
-                    <div class="grid grid-cols-2 gap-2 text-sm">
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>k → <strong>ක්</strong></span><span class="text-slate-400">ka → <strong>ක</strong></span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>g → <strong>ග්</strong></span><span class="text-slate-400">ga → <strong>ග</strong></span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>ch → <strong>ච්</strong></span><span class="text-slate-400">cha → <strong>ච</strong></span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>t → <strong>ට්</strong></span><span class="text-slate-400">th → <strong>ත්</strong></span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>d → <strong>ඩ්</strong></span><span class="text-slate-400">dh → <strong>ද්</strong></span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>sh → <strong>ශ්</strong></span><span class="text-slate-400">S → <strong>ෂ්</strong></span></div>
-                    </div>
-                </div>
-
-                <!-- Special Modifiers -->
-                <div class="glass-card p-6 rounded-2xl">
-                    <h3 class="text-base font-bold text-emerald-400 mb-4 font-mono-tech uppercase">3. බැඳි අකුරු සහ සංකේත</h3>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>ක්‍ර (Rakaraansaya)</span><span class="kbd-chip">kra → ක්‍ර</span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>ක්‍ය (Yansaya)</span><span class="kbd-chip">kya → ක්‍ය</span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>ං (Binduwa)</span><span class="kbd-chip">x / \n → ං</span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>ශ්‍රී (Sri)</span><span class="kbd-chip">shrii → ශ්‍රී</span></div>
-                        <div class="flex justify-between p-2 rounded-lg bg-slate-900/70"><span>ලංකාව (Lankawa)</span><span class="kbd-chip">lankaawa → ලංකාව</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800/80 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm">සි</div>
-                <div>
-                    <span class="font-bold text-white">Slashboard v4.2.1</span>
-                    <p class="text-xs text-slate-500">© 2026 Slashboard by Dinush Lakmal. Built for Sri Lanka.</p>
-                </div>
-            </div>
-            <div class="flex flex-wrap gap-6 text-sm text-slate-400">
-                <a href="index.html" class="hover:text-cyan-400 transition">Main Landing</a>
-                <a href="privacy.html" class="hover:text-cyan-400 transition">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-cyan-400 transition">Terms of Service</a>
-                <a href="https://github.com/dinushlakmal/xxSlashboardxx/releases" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition">GitHub Releases</a>
-                <a href="mailto:dinushlakmal01@gmail.com" class="hover:text-cyan-400 transition">Contact</a>
+    <footer>
+        <div class="container footer-row">
+            <div>© 2026 Slashboard • Dinush Lakmal | Slash Studios</div>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="mailto:dinushlakmal01@gmail.com">Support</a>
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Bottom Quick-Navigation Dock -->
-    <div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800 px-3 py-2 flex items-center justify-around text-[11px] font-medium text-slate-400">
-        <a href="index.html" class="flex flex-col items-center gap-0.5 hover:text-cyan-400 py-1">
-            <span>🏠</span><span>Overview</span>
-        </a>
-        <a href="#setup" class="flex flex-col items-center gap-0.5 text-cyan-400 py-1">
-            <span>⚡</span><span>Setup</span>
-        </a>
-        <a href="#new-in-421" class="flex flex-col items-center gap-0.5 hover:text-cyan-400 py-1">
-            <span>🚀</span><span>v4.2.1</span>
-        </a>
-        <a href="#tv-guide" class="flex flex-col items-center gap-0.5 hover:text-cyan-400 py-1">
-            <span>📺</span><span>TV Guide</span>
-        </a>
-        <a href="privacy.html" class="flex flex-col items-center gap-0.5 hover:text-cyan-400 py-1">
-            <span>🔒</span><span>Privacy</span>
-        </a>
-    </div>
+    <script>
+        function applyLanguage(lang) {
+            const safeLang = lang === 'en' ? 'en' : 'si';
+            document.documentElement.lang = safeLang;
+            localStorage.setItem('slashboard_web_lang', safeLang);
+            document.querySelectorAll('[data-si][data-en]').forEach((el) => {
+                el.textContent = el.getAttribute(safeLang === 'en' ? 'data-en' : 'data-si');
+            });
+            document.querySelectorAll('[data-lang-set]').forEach((btn) => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang-set') === safeLang);
+            });
+        }
+        document.querySelectorAll('[data-lang-set]').forEach((btn) => {
+            btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang-set')));
+        });
+        applyLanguage(localStorage.getItem('slashboard_web_lang') || 'si');
+    </script>
 </body>
 </html>

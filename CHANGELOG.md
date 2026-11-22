@@ -4,6 +4,43 @@ All notable changes to **Slashboard Sinhala Keyboard** will be documented in thi
 
 ---
 
+## [4.2.4] - 2026-11-22 (versionCode 50)
+
+### 🖼️ New Categorized Theme Wallpapers & Ultra-Fast Loading
+- **15 Diverse Categories (95+ Wallpapers):** Added **🇱🇰 Sri Lanka & Heritage**, **✨ Luxury & Gold**, **💖 Love & Romantic**, and **🏙️ City & Nightlife**, expanded existing categories with deduplicated images, and bundled **5 instant offline HD artworks** (`⚡ Instant`).
+- **Blazing-Fast Loading Engine:** Switched grid previews to 15x smaller `360px` WebP thumbnails, true lazy grid rendering, background prefetching, shared persistent disk/memory Coil caching, `RGB_565` decoding, and category gradient placeholders.
+
+---
+
+## [4.2.3] - 2026-11-19 (versionCode 49)
+
+### 🧠 Sequential Next-Word Recent Suggestions & Instant Top Bar Control
+- **Continuous Next-Word Chain Learning:** ඔබ එක දිගට ටයිප් කරන වාක්‍ය රටා (උදා: `"මං ඔයාට ආදරෙයි"`) bigram/trigram ලෙස සුරක්ෂිතව ඉගෙනගෙන, ටයිප් කරන විටම ඊළඟ වචනය (`මං` -> `ඔයාට` -> `ආදරෙයි`) අඛණ්ඩව යෝජනා කරයි.
+- **Typing-Only Visibility & Instant Top Bar Reveal:** Recent Suggestions පෙන්වන්නේ වචනයක් ටයිප් කරන විට හෝ chain select කරන විට පමණි. Space එබූ සැණින් හෝ මගදී Backspace එබූ සැණින් Top Bar එක ක්ෂණිකව දිස්වේ.
+
+### ✨ Smooth Zero-Delay Slide-In Fade Animations
+- **Crisp Visual Feedback:** Space, Backspace හෝ suggestion selection එකෙන් පසු Top Bar icons, next-word chips, සහ inline suggestions කිසිදු පමාවකින් තොරව (`0ms`) සුමට slide-in fade animation එකකින් දිස්වේ.
+
+### 💾 POS & Smart Wallet Draft Persistence
+- **Zero Lost Typing on Accidental Back:** Mini-POS (Quick Bill, Customer Book, Catalog, History), Smart Wallet (මුදල් පොත), සහ Keyboard POS/Wallet boards තුළ ටයිප් කරමින් සිටියදී Back press කළත්, tabs මාරු කළත්, වෙනත් ඇප් එකකට ගියත් හෝ keyboard hide වුණත්, ඇප් එකෙන් සම්පූර්ණයෙන්ම පිටවන තුරු හෝ Save/Clear කරන තුරු ඔබ ටයිප් කළ දත්ත රැඳී පවතී.
+
+---
+
+## [4.2.2] - 2026-11-19
+
+### 💼 Smart Wallet ("මුදල් පොත") — Reimagined Money & Expense Tracker
+- **New User-Friendly Identity:** Cashbook විශේෂාංගය වඩාත් පහසු **"💼 මුදල් පොත (Smart Wallet)"** නමින් නැවත හඳුන්වා දෙන ලදී.
+- **⚡ 1-Tap Instant Log & Inline Entry:** දෛනික වියදම්/ආදායම් (තේ, බස්, දිවා ආහාරය, Data/Reload, ඉන්ධන, විකුණුම්) එක් ටැප් එකකින් සටහන් කිරීමේ Preset Chips සහ `450 Petrol` / `+2500 Order` කෙටි ආදාන තීරුව.
+- **💵 Wallet Account Balances & 🎯 Safe Daily Spend:** අතේ ඇති මුදල් (Cash), බැංකු (Bank) සහ කාඩ්පත් (Card) ශේෂයන් වෙන වෙනම පෙන්වීම, ඉතිරි කිරීමේ ප්‍රතිශතය (Savings Rate %), සහ දිනකට ආරක්ෂිතව වියදම් කළ හැකි මුදල (Safe/Day) ගණනය කිරීම.
+- **🔍 Instant Search, Filters & 📲 1-Tap WhatsApp Summary:** සටහන්/මුදල් ක්ෂණික සෙවුම, Account Filter, යතුරුපුවරුවේ `📋 Paste` සාරාංශ බොත්තම, සහ PDF / Excel (CSV) / WhatsApp Text වාර්තා.
+
+### ⚡ 2GB / 3GB Low-RAM Turbo Engine & Universal Multi-Device Support
+- **Custom Memory Management:** යතුරුපුවරුව වැසෙන විට ස්වයංක්‍රීය Bitmap/Sprite-sheet නිදහස් කිරීම (`clearCacheAndRecycleBitmaps`), `WeakReference` background tasks, සහ Viewport-aware 60fps UI layouts.
+- **Emoji Pack Hub:** WhatsApp Emoji Style පෙර-ස්ථාපිතව (100% Offline) + Download කළ හැකි iOS, Facebook, Twitter/X සහ Google Noto Emoji Packs.
+- **Phone, Tablet, Android TV & Media Box Support:** TV Remote D-Pad හැසිරවීම සහ Non-Fullscreen Landscape සහාය.
+
+---
+
 ## [4.0.0] - 2026-11-05
 
 ### 🎨 Clean & Simple Age-Friendly UI + Experimental Lab Tab
