@@ -135,6 +135,33 @@
 
         .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 
+        .guide-banner-wrap {
+            max-width: 920px;
+            margin: 28px auto 0;
+            padding: 8px;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(15, 23, 42, 0.7), rgba(52, 211, 153, 0.3));
+            box-shadow: 0 22px 54px -18px rgba(56, 189, 248, 0.32);
+        }
+        .guide-banner-wrap img {
+            width: 100%;
+            display: block;
+            border-radius: calc(var(--radius-xl) - 6px);
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: linear-gradient(135deg, #0b2545, #0f3d4c);
+        }
+        .card-thumb {
+            width: 100%;
+            display: block;
+            border-radius: 14px;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            margin-bottom: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.22);
+            background: linear-gradient(135deg, #0b2545, #0f3d4c);
+        }
+
         footer { border-top: 1px solid var(--border); padding: 30px 0; margin-top: 32px; color: var(--text-muted); font-size: 0.86rem; }
         .footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
         .footer-row a { color: var(--text-muted); text-decoration: none; margin-left: 14px; }
@@ -188,6 +215,9 @@
                 <a href="#singlish-chart" class="btn btn-ghost" data-si="3. Singlish උදාහරණ" data-en="3. Singlish Examples">3. Singlish උදාහරණ</a>
                 <a href="#smart-tools" class="btn btn-ghost" data-si="4. Smart Wallet &amp; POS" data-en="4. Smart Wallet &amp; POS">4. Smart Wallet &amp; POS</a>
             </div>
+            <div class="guide-banner-wrap">
+                <img src="web-assets/guide-banner.jpg" alt="Slashboard across Windows Laptop, Android Phone, Tablet and Smart TV" loading="eager">
+            </div>
         </div>
 
         <!-- 1. Android 3-Step Setup -->
@@ -233,15 +263,17 @@
 
             <div class="two-col">
                 <div class="card">
+                    <img src="web-assets/windows-studio.jpg" alt="Slashboard Windows PC Sinhala Typing Setup" class="card-thumb" loading="lazy">
                     <h3 data-si="💻 සරල ස්ථාපනය (Install &amp; Type)" data-en="💻 Simple Setup (Install &amp; Type)">💻 සරල ස්ථාපනය (Install &amp; Type)</h3>
                     <p style="margin-bottom: 14px;"
                        data-si="1. Windows Installer එක Download කරලා Run කරන්න. 2. Taskbar එකෙන් Slashboard සක්‍රීය කරන්න. 3. සාමාන්‍ය ඉංග්‍රීසි Keyboard එකෙන් Singlish ටයිප් කරද්දී කෙලින්ම සිංහල Unicode ටයිප් වෙනවා."
                        data-en="1. Download and run the Windows installer. 2. Enable Slashboard from the system tray. 3. Type in Singlish on your regular PC keyboard for instant Sinhala Unicode everywhere.">
                         1. Windows Installer එක Download කරලා Run කරන්න. 2. Taskbar එකෙන් Slashboard සක්‍රීය කරන්න. 3. සාමාන්‍ය ඉංග්‍රීසි Keyboard එකෙන් Singlish ටයිප් කරද්දී කෙලින්ම සිංහල Unicode ටයිප් වෙනවා.
                     </p>
-                    <a href="index.html#windows" class="btn btn-windows" data-si="Windows Download පිටුවට යන්න →" data-en="Go to Windows Download →">Windows Download පිටුවට යන්න →</a>
+                    <a href="https://github.com/dinushlakmal/xxSlashboardxx/releases/download/v4.2.4/Slashboard_Setup.exe" target="_blank" rel="noopener noreferrer" class="btn btn-windows" data-si="⬇️ Slashboard_Setup.exe Download කරන්න" data-en="⬇️ Download Slashboard_Setup.exe">⬇️ Slashboard_Setup.exe Download කරන්න</a>
                 </div>
                 <div class="card">
+                    <img src="web-assets/hero-showcase.jpg" alt="Slashboard Multi-Device Sync Experience" class="card-thumb" loading="lazy">
                     <h3 data-si="📺 Android TV සහ Media Box උපදෙස්" data-en="📺 Android TV &amp; Media Box Tips">📺 Android TV සහ Media Box උපදෙස්</h3>
                     <p data-si="Smart TV එකේ Remote එකේ Arrow keys (D-Pad) වලින් පහසුවෙන් අකුරු තෝරන්න පුළුවන්. YouTube හෝ Browser එකේ සිංහලෙන් search කරන්න හරිම ලේසියි."
                        data-en="Navigate keys effortlessly with your TV remote D-Pad to search YouTube and browse in Sinhala or English.">
@@ -285,6 +317,7 @@
 
             <div class="two-col">
                 <div class="card">
+                    <img src="web-assets/mobile-features.jpg" alt="Slashboard Smart Wallet, Themes and Mini-POS" class="card-thumb" loading="lazy">
                     <h3 data-si="💼 මුදල් පොත (Smart Wallet)" data-en="💼 Smart Wallet (Money Book)">💼 මුදල් පොත (Smart Wallet)</h3>
                     <p data-si="කීබෝඩ් එකෙන්ම '-450 Petrol' හෝ '+2500 Order' වගේ කෙටියෙන් ටයිප් කරලා එවෙලෙම වියදම්/ආදායම් සටහන් කරන්න. ටයිප් කරද්දී Back වුණත් ඔබ ලියපු ටික මැකෙන්නේ නෑ."
                        data-en="Log expenses or income in seconds like '-450 Petrol' or '+2500 Order' with Cash/Bank/Card tracking and automatic draft saving.">
@@ -292,6 +325,7 @@
                     </p>
                 </div>
                 <div class="card">
+                    <img src="web-assets/pos-billing.jpg" alt="Slashboard Mini-POS and WhatsApp Billing Receipts" class="card-thumb" loading="lazy">
                     <h3 data-si="🧾 Mini-POS සහ WhatsApp බිල්පත්" data-en="🧾 Mini-POS &amp; WhatsApp Invoices">🧾 Mini-POS සහ WhatsApp බිල්පත්</h3>
                     <p data-si="Online ව්‍යාපාර කරන අයට පාරිභෝගිකයාගේ නම, භාණ්ඩ සහ මිල දාලා තත්පර කීපයෙන් PDF හෝ Image බිල්පතක් හදලා කෙලින්ම WhatsApp කරන්න පුළුවන්."
                        data-en="Build itemized customer bills and share crisp PDF or PNG receipts directly into WhatsApp chats in seconds.">

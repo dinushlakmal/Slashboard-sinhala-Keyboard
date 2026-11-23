@@ -433,7 +433,7 @@
             position: relative;
             border-radius: calc(var(--radius-xl) - 6px);
             overflow: hidden;
-            background: #070b14;
+            background: linear-gradient(135deg, #0b2545, #0f3d4c);
         }
 
         .hero-visual img {
@@ -526,7 +526,8 @@
         .spotlight-media {
             border-radius: var(--radius-lg);
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            background: linear-gradient(135deg, #0b2545, #0f3d4c);
             position: relative;
         }
 
@@ -756,7 +757,8 @@
         .eco-media {
             border-radius: var(--radius-lg);
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            background: linear-gradient(135deg, #0b2545, #0f3d4c);
         }
 
         .eco-media img {
@@ -919,6 +921,7 @@
         }
 
         .modal-card {
+            position: relative;
             max-width: 460px;
             width: 100%;
             background: #0f172a;
@@ -927,6 +930,100 @@
             padding: 26px;
             text-align: center;
             box-shadow: 0 28px 64px rgba(0, 0, 0, 0.65);
+        }
+
+        .modal-close-x {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: rgba(15, 23, 42, 0.85);
+            color: var(--text-muted);
+            font-size: 1rem;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .modal-close-x:hover {
+            color: #fff;
+            border-color: var(--cyan);
+        }
+
+        /* Beta Testing Card & Form */
+        .beta-card {
+            margin-top: 22px;
+            padding: 26px 28px;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(15, 23, 42, 0.9) 52%, rgba(56, 189, 248, 0.12));
+            border: 1px solid rgba(52, 211, 153, 0.36);
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .beta-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .beta-form-row {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .beta-input {
+            flex: 1;
+            min-width: 0;
+            padding: 13px 15px;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            background: rgba(5, 8, 17, 0.85);
+            color: #fff;
+            font-size: 0.95rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .beta-input:focus {
+            border-color: var(--emerald);
+            box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2);
+        }
+
+        .beta-status {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            min-height: 20px;
+            text-align: left;
+        }
+
+        .beta-status.ok { color: var(--emerald); font-weight: 600; }
+        .beta-status.err { color: #fb7185; font-weight: 600; }
+        .beta-status.info { color: var(--cyan); }
+
+        .play-direct-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--cyan);
+            font-size: 0.84rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .play-direct-link:hover { text-decoration: underline; }
+
+        @media (max-width: 820px) {
+            .beta-card { grid-template-columns: 1fr; padding: 20px; }
+            .beta-form-row { flex-direction: column; }
         }
 
         @keyframes fadeIn {
@@ -1072,11 +1169,11 @@
                     </p>
 
                     <div class="hero-ctas">
-                        <a href="https://play.google.com/store/apps/details?id=com.slashbord" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <a href="https://play.google.com/store/apps/details?id=com.slashbord" target="_blank" rel="noopener noreferrer" class="btn btn-primary js-play-beta-trigger">
                             <span>▶</span>
                             <span data-si="Google Play වෙතින් ගන්න" data-en="Get on Google Play">Google Play වෙතින් ගන්න</span>
                         </a>
-                        <a href="#windows" class="btn btn-windows js-windows-trigger">
+                        <a href="https://github.com/dinushlakmal/xxSlashboardxx/releases/download/v4.2.4/Slashboard_Setup.exe" target="_blank" rel="noopener noreferrer" class="btn btn-windows js-windows-download">
                             <span>💻</span>
                             <span data-si="Windows PC Download" data-en="Download for Windows">Windows PC Download</span>
                         </a>
@@ -1091,7 +1188,7 @@
 
                 <div class="hero-visual reveal visible">
                     <div class="hero-visual-inner">
-                        <img src="web-assets/hero-devices.jpg" alt="Slashboard on Windows PC and Android Smartphone" loading="eager">
+                        <img src="web-assets/hero-showcase.jpg" alt="Slashboard on Windows PC and Android Smartphone" loading="eager">
                         <div class="floating-chip chip-top">
                             <span class="live-dot"></span>
                             <span data-si="Windows + Android Sync Experience" data-en="Windows + Android Experience">Windows + Android Sync Experience</span>
@@ -1110,7 +1207,7 @@
             <div class="container">
                 <div class="spotlight-card reveal">
                     <div class="spotlight-media">
-                        <img src="web-assets/windows-typing.jpg" alt="Slashboard Windows PC Sinhala Typing" loading="lazy">
+                        <img src="web-assets/windows-studio.jpg" alt="Slashboard Windows PC Sinhala Typing" loading="lazy">
                     </div>
                     <div class="spotlight-content">
                         <div class="new-badge">
@@ -1152,9 +1249,9 @@
                                 <span data-si="Windows සඳහා Download කරන්න (.exe)" data-en="Download for Windows (.exe)">Windows සඳහා Download කරන්න (.exe)</span>
                             </a>
                             <span class="slot-note mono" id="windowsDownloadStatus"
-                                  data-si="Windows 10 / 11 (64-bit) • Link එක ඉක්මනින්ම ලබාදේ"
-                                  data-en="Windows 10 / 11 (64-bit) • Download link slot ready">
-                                Windows 10 / 11 (64-bit) • Link එක ඉක්මනින්ම ලබාදේ
+                                  data-si="Windows 10 / 11 (64-bit) • Slashboard_Setup.exe • දැන්ම Download කරගන්න"
+                                  data-en="Windows 10 / 11 (64-bit) • Slashboard_Setup.exe • Ready to download">
+                                Windows 10 / 11 (64-bit) • Slashboard_Setup.exe • දැන්ම Download කරගන්න
                             </span>
                         </div>
                     </div>
@@ -1302,7 +1399,7 @@
                         <a href="home.html" class="btn btn-ghost" data-si="භාවිතා කරන හැටි කියවන්න →" data-en="Read Quick Start Guide →">භාවිතා කරන හැටි කියවන්න →</a>
                     </div>
                     <div class="eco-media">
-                        <img src="web-assets/mobile-ecosystem.jpg" alt="Slashboard Android Keyboard Ecosystem" loading="lazy">
+                        <img src="web-assets/mobile-features.jpg" alt="Slashboard Android Keyboard Ecosystem" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1340,7 +1437,7 @@
                             </p>
                         </div>
                         <div class="dl-btns">
-                            <a href="https://play.google.com/store/apps/details?id=com.slashbord" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <a href="https://play.google.com/store/apps/details?id=com.slashbord" target="_blank" rel="noopener noreferrer" class="btn btn-primary js-play-beta-trigger">
                                 <span>▶</span>
                                 <span data-si="Google Play Store" data-en="Google Play Store">Google Play Store</span>
                             </a>
@@ -1380,6 +1477,33 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Google Play Beta Testing Apply Card -->
+                <div class="beta-card reveal" id="beta-testing">
+                    <div>
+                        <div class="new-badge" style="margin-bottom: 10px;">
+                            <span>🧪</span>
+                            <span data-si="GOOGLE PLAY BETA TESTING" data-en="GOOGLE PLAY BETA TESTING">GOOGLE PLAY BETA TESTING</span>
+                        </div>
+                        <h3 style="font-size: 1.32rem; margin-bottom: 8px;"
+                            data-si="Play Store Beta Testing වලට Apply කරන්න"
+                            data-en="Apply for Google Play Beta Testing">
+                            Play Store Beta Testing වලට Apply කරන්න
+                        </h3>
+                        <p style="color: #cbd5e1; font-size: 0.92rem;"
+                           data-si="Google Play එකෙන් Slashboard Beta ලබාගන්න ඔබේ Play Store Gmail ලිපිනය මෙතන Submit කරන්න. එය කෙලින්ම අප වෙත ලැබෙන අතර අනුමත කළ පසු Play Store වෙතින් download කරගත හැකියි."
+                           data-en="Submit your Google Play Gmail address below to join the closed beta. Your request goes directly to the developer for tester approval.">
+                            Google Play එකෙන් Slashboard Beta ලබාගන්න ඔබේ Play Store Gmail ලිපිනය මෙතන Submit කරන්න. එය කෙලින්ම අප වෙත ලැබෙන අතර අනුමත කළ පසු Play Store වෙතින් download කරගත හැකියි.
+                        </p>
+                    </div>
+                    <form class="beta-form" id="inlineBetaForm" novalidate>
+                        <div class="beta-form-row">
+                            <input type="email" id="inlineBetaEmail" class="beta-input" placeholder="yourname@gmail.com" autocomplete="email" required aria-label="Your Google Play Gmail address">
+                            <button type="submit" id="inlineBetaSubmit" class="btn btn-primary" data-si="Apply කරන්න" data-en="Apply Now">Apply කරන්න</button>
+                        </div>
+                        <div id="inlineBetaStatus" class="beta-status" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
@@ -1407,12 +1531,51 @@
 
     <!-- Mobile Sticky Bottom Quick Bar -->
     <div class="mobile-dock" aria-label="Quick Actions">
-        <a href="https://play.google.com/store/apps/details?id=com.slashbord" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <a href="https://play.google.com/store/apps/details?id=com.slashbord" target="_blank" rel="noopener noreferrer" class="btn btn-primary js-play-beta-trigger">
             <span>▶</span> <span data-si="Play Store" data-en="Play Store">Play Store</span>
         </a>
         <a href="#windows" class="btn btn-windows js-windows-download">
             <span>💻</span> <span data-si="Windows PC" data-en="Windows PC">Windows PC</span>
         </a>
+    </div>
+
+    <!-- Google Play Beta Testing Application Modal -->
+    <div class="modal-backdrop" id="betaModal" role="dialog" aria-modal="true" aria-labelledby="betaModalTitle">
+        <div class="modal-card">
+            <button type="button" class="modal-close-x" id="closeBetaModal" aria-label="Close">✕</button>
+            <div style="font-size: 2.2rem; margin-bottom: 8px;">🧪</div>
+            <h3 id="betaModalTitle" style="font-size: 1.28rem; margin-bottom: 8px;"
+                data-si="Google Play Beta Testing වලට Apply කරන්න"
+                data-en="Join Google Play Beta Testing">
+                Google Play Beta Testing වලට Apply කරන්න
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 18px;"
+               data-si="Play Store එකෙන් Slashboard download කරගන්න ඔබේ Phone එකේ Play Store Gmail ලිපිනය පහළින් Submit කරන්න. එය අපගේ email එකට ලැබුණු පසු ඔබව Beta Testing සඳහා එකතු කරනු ලැබේ."
+               data-en="Enter the Gmail address signed into your Google Play Store below. Once submitted, we will receive your Gmail and add you to the Beta tester list.">
+                Play Store එකෙන් Slashboard download කරගන්න ඔබේ Phone එකේ Play Store Gmail ලිපිනය පහළින් Submit කරන්න. එය අපගේ email එකට ලැබුණු පසු ඔබව Beta Testing සඳහා එකතු කරනු ලැබේ.
+            </p>
+            <form class="beta-form" id="modalBetaForm" novalidate>
+                <input type="email" id="modalBetaEmail" class="beta-input" placeholder="yourname@gmail.com" autocomplete="email" required aria-label="Your Google Play Gmail address">
+                <button type="submit" id="modalBetaSubmit" class="btn btn-primary" style="width: 100%;"
+                        data-si="📩 Gmail Submit කරන්න (Beta Apply)"
+                        data-en="📩 Submit Gmail for Beta">
+                    📩 Gmail Submit කරන්න (Beta Apply)
+                </button>
+                <div id="modalBetaStatus" class="beta-status" style="text-align: center;" role="status" aria-live="polite"></div>
+            </form>
+            <div style="margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                <a href="https://play.google.com/store/apps/details?id=com.slashbord" target="_blank" rel="noopener noreferrer" id="betaDirectPlayBtn" class="play-direct-link" style="margin-top: 0;"
+                   data-si="දැනටමත් Approved ද? කෙලින්ම Google Play වෙත යන්න →"
+                   data-en="Already approved? Open Google Play Store →">
+                    දැනටමත් Approved ද? කෙලින්ම Google Play වෙත යන්න →
+                </a>
+                <a href="https://github.com/dinushlakmal/xxSlashboardxx/releases" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); font-size: 0.78rem; text-decoration: none;"
+                   data-si="නැතිනම් GitHub වෙතින් Direct APK ගන්න"
+                   data-en="Or grab the Direct APK from GitHub Releases">
+                    නැතිනම් GitHub වෙතින් Direct APK ගන්න
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Windows Download Placeholder Modal (Shown only while WINDOWS_DOWNLOAD_URL is empty) -->
@@ -1441,9 +1604,8 @@
     <script>
         // =========================================================================
         // 👇 WINDOWS DOWNLOAD LINK: මෙතන ඔබේ Windows Download Link එක Paste කරන්න!
-        // Example: const WINDOWS_DOWNLOAD_URL = "https://github.com/dinushlakmal/xxSlashboardxx/releases/download/v1.0/Slashboard-Windows-Setup.exe";
         // =========================================================================
-        const WINDOWS_DOWNLOAD_URL = "";
+        const WINDOWS_DOWNLOAD_URL = "https://github.com/dinushlakmal/xxSlashboardxx/releases/download/v4.2.4/Slashboard_Setup.exe";
 
         // 1. Configure Windows download buttons automatically
         const winButtons = document.querySelectorAll('.js-windows-download');
@@ -1472,6 +1634,118 @@
         closeWinModal?.addEventListener('click', () => winModal.classList.remove('open'));
         winModal?.addEventListener('click', (e) => {
             if (e.target === winModal) winModal.classList.remove('open');
+        });
+
+        // 1B. Google Play Beta Testing Gmail Application (Modal + Inline Form -> dinushlakmal01@gmail.com)
+        const DEVELOPER_EMAIL = "dinushlakmal01@gmail.com";
+        const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.slashbord";
+        const betaModal = document.getElementById('betaModal');
+        const closeBetaModal = document.getElementById('closeBetaModal');
+        const modalBetaEmail = document.getElementById('modalBetaEmail');
+        const modalBetaForm = document.getElementById('modalBetaForm');
+        const modalBetaSubmit = document.getElementById('modalBetaSubmit');
+        const modalBetaStatus = document.getElementById('modalBetaStatus');
+        const inlineBetaForm = document.getElementById('inlineBetaForm');
+        const inlineBetaEmail = document.getElementById('inlineBetaEmail');
+        const inlineBetaSubmit = document.getElementById('inlineBetaSubmit');
+        const inlineBetaStatus = document.getElementById('inlineBetaStatus');
+
+        document.querySelectorAll('.js-play-beta-trigger').forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                betaModal?.classList.add('open');
+                setTimeout(() => modalBetaEmail?.focus(), 80);
+            });
+        });
+
+        closeBetaModal?.addEventListener('click', () => betaModal?.classList.remove('open'));
+        betaModal?.addEventListener('click', (e) => {
+            if (e.target === betaModal) betaModal.classList.remove('open');
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                betaModal?.classList.remove('open');
+                winModal?.classList.remove('open');
+            }
+        });
+
+        async function submitBetaGmail(emailInput, submitBtn, statusEl, sourceLabel) {
+            const isEn = document.documentElement.lang === 'en';
+            const gmail = (emailInput?.value || '').trim();
+            const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(gmail);
+
+            if (!validEmail) {
+                statusEl.className = 'beta-status err';
+                statusEl.textContent = isEn
+                    ? 'Please enter a valid Google Play Gmail address (e.g. name@gmail.com).'
+                    : 'කරුණාකර නිවැරදි Gmail ලිපිනයක් ඇතුළත් කරන්න (උදා: name@gmail.com).';
+                emailInput?.focus();
+                return;
+            }
+
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = isEn ? 'Sending...' : 'යවමින් පවතී...';
+            statusEl.className = 'beta-status info';
+            statusEl.textContent = isEn ? 'Submitting your Beta request...' : 'ඔබේ Gmail ලිපිනය යවමින් පවතී...';
+
+            try {
+                const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(DEVELOPER_EMAIL)}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        _subject: `Slashboard Beta Tester Request: ${gmail}`,
+                        _template: 'table',
+                        _captcha: 'false',
+                        tester_gmail: gmail,
+                        package_id: 'com.slashbord',
+                        app_version: 'v4.2.4',
+                        source: sourceLabel,
+                        play_store_link: PLAY_STORE_URL
+                    })
+                });
+
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+
+                statusEl.className = 'beta-status ok';
+                statusEl.textContent = isEn
+                    ? `Success! ${gmail} has been sent. You will be added to Google Play Beta testing shortly.`
+                    : `සාර්ථකයි! ${gmail} ලිපිනය අප වෙත ලැබුණා. ඉක්මනින්ම ඔබව Google Play Beta Testing සඳහා එකතු කරනු ලැබේ!`;
+                emailInput.value = '';
+            } catch (_) {
+                const subject = encodeURIComponent(`Slashboard Beta Testing Request - ${gmail}`);
+                const body = encodeURIComponent(`Hi Dinush,\n\nPlease add my Google Play Gmail to Slashboard Beta Testing:\nGmail: ${gmail}\nApp: Slashboard (com.slashbord) v4.2.4`);
+                const mailtoHref = `mailto:${DEVELOPER_EMAIL}?subject=${subject}&body=${body}`;
+                statusEl.className = 'beta-status err';
+                statusEl.textContent = '';
+                const msgSpan = document.createElement('span');
+                msgSpan.textContent = isEn
+                    ? 'Could not send automatically. '
+                    : 'ස්වයංක්‍රීයව යැවීමට නොහැකි වුණා. ';
+                const mailLink = document.createElement('a');
+                mailLink.href = mailtoHref;
+                mailLink.style.color = '#38bdf8';
+                mailLink.style.fontWeight = '700';
+                mailLink.textContent = isEn ? 'Tap here to send via Email App →' : 'මෙතන ඔබලා Email App එකෙන් යවන්න →';
+                statusEl.appendChild(msgSpan);
+                statusEl.appendChild(mailLink);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        }
+
+        modalBetaForm?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitBetaGmail(modalBetaEmail, modalBetaSubmit, modalBetaStatus, 'Play Store Button Modal');
+        });
+
+        inlineBetaForm?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitBetaGmail(inlineBetaEmail, inlineBetaSubmit, inlineBetaStatus, 'Download Center Beta Form');
         });
 
         // 2. Bilingual (Simple Sinhala <-> English) Switcher
