@@ -1,32 +1,33 @@
-# 🇱🇰 Slashboard Sinhala Keyboard (ස්ලෑෂ්බෝඩ් සිංහල යතුරුපුවරුව)
+# 🇱🇰 Slashboard Sinhala Keyboard & Slashboard Windows (ස්ලෑෂ්බෝඩ් සිංහල යතුරුපුවරුව)
 
-[![Latest Release](https://img.shields.io/badge/Release-v4.0.0-indigo?style=for-the-badge&logo=android)](https://github.com/dinushlakmal/xxSlashboardxx/releases)
-[![Build & Test](https://img.shields.io/badge/Build-Passing-emerald?style=for-the-badge&logo=githubactions)](https://github.com/dinushlakmal/xxSlashboardxx/actions)
+[![Latest Release](https://img.shields.io/badge/Release-v4.2.6-indigo?style=for-the-badge&logo=android)](https://github.com/dinushlakmal/Slashboard-sinhala-Keyboard/releases)
+[![Build & Test](https://img.shields.io/badge/Build-Passing-emerald?style=for-the-badge&logo=githubactions)](https://github.com/dinushlakmal/Slashboard-sinhala-Keyboard/actions)
 [![Google Play Ready](https://img.shields.io/badge/Google%20Play-Target%20SDK%2036-brightgreen?style=for-the-badge&logo=googleplay)](https://play.google.com/store/apps/details?id=com.slashbord)
-[![Offline & Private](https://img.shields.io/badge/Privacy-100%25%20On--Device-blue?style=for-the-badge&logo=shield)](https://dinushlakmal.github.io/xxSlashboardxx/privacy.html)
+[![Offline & Private](https://img.shields.io/badge/Privacy-100%25%20On--Device-blue?style=for-the-badge&logo=shield)](https://dinushlakmal.github.io/Slashboard-sinhala-Keyboard/privacy.html)
+[![Slashboard Windows](https://img.shields.io/badge/Windows-PC%20Edition-0078D6?style=for-the-badge&logo=windows)](https://dinushlakmal.github.io/Slashboard-sinhala-Keyboard/)
 [![Facebook](https://img.shields.io/badge/Facebook-Follow-1877F2?style=for-the-badge&logo=facebook)](https://www.facebook.com/profile.php?id=61593856756750)
 
-Slashboard යනු Android උපාංග සඳහා විශේෂයෙන් නිර්මාණය කරන ලද, 100% On-Device සහ ආරක්ෂිත (Offline & Private) ස්වදේශික සිංහල යතුරුපුවරු යෙදුමකි (Native Sinhala IME).
+Slashboard යනු Android සහ Windows PC උපාංග සඳහා විශේෂයෙන් නිර්මාණය කරන ලද, 100% On-Device සහ ආරක්ෂිත (Offline & Private) ස්වදේශික සිංහල යතුරුපුවරු යෙදුමකි (Native Sinhala & Singlish IME for Android & Windows).
 **Developed By Dinush Lakmal | Slash Studios**
 
 ### 🔗 ප්‍රයෝජනවත් සබැඳි (Quick Links):
-- 📥 **Direct Download APK & AAB (v4.0.0):** [GitHub Releases](https://github.com/dinushlakmal/xxSlashboardxx/releases)
-- 🌐 **නිල වෙබ් අඩවිය (Official Website):** [https://dinushlakmal.github.io/xxSlashboardxx/](https://dinushlakmal.github.io/xxSlashboardxx/)
+- 📥 **Direct Download APK & AAB (v4.2.6):** [GitHub Releases](https://github.com/dinushlakmal/Slashboard-sinhala-Keyboard/releases)
+- 🖥️ **Slashboard Windows (PC Edition):** [Slashboard Windows Hub](https://dinushlakmal.github.io/Slashboard-sinhala-Keyboard/)
+- 🌐 **නිල වෙබ් අඩවිය (Official Website):** [https://dinushlakmal.github.io/Slashboard-sinhala-Keyboard/](https://dinushlakmal.github.io/Slashboard-sinhala-Keyboard/)
 - 📘 **නිල Facebook පිටුව:** [Slashboard Facebook](https://www.facebook.com/profile.php?id=61593856756750)
 - 👨‍💻 **GitHub Profile:** [@dinushlakmal](https://github.com/dinushlakmal)
-- 🔒 **පුද්ගලිකත්ව ප්‍රතිපත්තිය (Privacy Policy):** [Privacy Policy](https://dinushlakmal.github.io/xxSlashboardxx/privacy.html)
+- 🔒 **පුද්ගලිකත්ව ප්‍රතිපත්තිය (Privacy Policy):** [Privacy Policy](https://dinushlakmal.github.io/Slashboard-sinhala-Keyboard/privacy.html)
 
 ---
 
-## 🌟 ප්‍රධාන විශේෂාංග (Key Features - v4.0.0)
+## 🌟 ප්‍රධාන විශේෂාංග (Key Features - v4.2.6)
 
-### 0. ⚡ v4.0.0 නවතම යාවත්කාලීන (What's New in v4.0.0)
-- **Clean & Simple Age-Friendly UI + Experimental Lab Tab**: ඕනෑම වයස් මට්ටමක කෙනෙකුට පහසුවෙන් භාවිතා කළ හැකි පිරිසිදු Settings UI එක සහ සංකීර්ණ විකල්ප සඟවා තබන **Experimental** ටැබ් එක.
-- **Memory-Efficient Singlish Typo Auto-Correction**: Singlish ටයිප් කිරීමේ අත්වැරදීම් නිවැරදිව හඳුනාගන්නා අඩු RAM ධාරිතාවකින් ක්‍රියාත්මක වන Local Dictionary Auto-Correction පද්ධතිය.
-- **100% Google Play Store Policy Compliant**: Play Store Data Safety සහ Least-Privilege ප්‍රමිතීන්ට 100%ක් අනුකූල කරන ලදී.
-- **0ms Instant Top Bar Reveal & Smart Emoji Suggestions**: Space හෝ Suggestion එබූ සැනින් `0ms` ක්ෂණිකව Top Bar පෙන්වීම සහ සිංහල/Singlish/English ඉමෝජි යෝජනා.
-- **APK Size Compression & 120fps Engine**: APK ප්‍රමාණය ~8MB+ කින් අඩු කර, 120fps Zero-Jank යතුරුකරණ වේගයක් ලබා දී ඇත.
-- **Auto Force-Stop / ANR / OOM Fix & UI Polish**: කලාතුරකින් සිදුවූ Auto Force-Stop ගැටලුව, පසුබිම් RAM දෙගුණ වීම (OOM) සහ Dialog UI ගැටලු සම්පූර්ණයෙන්ම විසඳා ඇත.
+### 0. ⚡ v4.2.6 නවතම යාවත්කාලීන (What's New in v4.2.6)
+- **Slashboard Windows (PC Edition):** Windows පරිගණක සඳහා විශේෂයෙන් සාදන ලද Slashboard Windows යතුරුකරණ සහ ටයිපිං සහායකය (PC Companion) නිල වශයෙන් එක් කර ඇත.
+- **Direct Privacy Policy URL (`privacy.html`):** යෙදුම තුළ සහ නිල වෙබ් අඩවියේ Google Play ප්‍රමිතීන්ට අනුකූලව Privacy Policy පිටුව සෘජුවම සම්බන්ධ කර ඇත.
+- **Smart Wallet Delete & Sync Fix:** මුදල් පොතේ (Smart Wallet) එකතු කළ ආදායම් සහ වියදම් සටහන් පහසුවෙන් මකා දැමිය හැකි වන සේ සහ බැලන්ස් එක ක්ෂණිකව යාවත්කාලීන වන සේ නිවැරදි කර ඇත.
+- **Default OFF Recent Suggestions:** Recent Suggestions පෙරනිමියෙන් OFF කර ඇති අතර අවශ්‍ය විට Settings වෙතින් සක්‍රීය කරගත හැක.
+- **Expanded WhatsApp Emojis & 1s Splash Animation:** WhatsApp ඉමෝජි එකතුව පුළුල් කර ඇති අතර ඇප් එකට නැවත පැමිණීමේදී පෙන්වන Loading Animation එක තත්පර 1කට සීමා කර ඇත.
 
 ### 1. ⚡ Zero-Lag High Performance Typing Engine
 - **Ultra Smooth Response**: යතුරු එබීමේදී ක්ෂණික ප්‍රතිචාරය (Instant 0-latency input) ලබාදීම සඳහා බරැති පසුබිම් animations ඉවත් කර සකසා ඇත.
